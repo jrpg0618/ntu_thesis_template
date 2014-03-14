@@ -1,0 +1,194 @@
+% === NTU thesis geometry ===
+\usepackage{geometry}
+\geometry{verbose,a4paper,tmargin=3cm,bmargin=2cm,lmargin=3cm,rmargin=3cm}
+%\linespread{1.5}
+\usepackage{setspace}
+
+% === Original geometry ===
+%\textwidth 15cm \textheight 21cm  %A4: 210x297mm; letter: 216x279mm
+%\hoffset -0.5cm \topmargin -0.cm
+
+\usepackage{epsfig,epstopdf}
+\usepackage{multirow}
+\usepackage{rotating}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{lineno}
+\usepackage{indentfirst}
+\usepackage[titletoc,title]{appendix}
+\usepackage{subfiles}
+
+\usepackage{bashful}
+
+
+% === citation ===
+%\usepackage[round]{natbib}
+
+
+
+% ===
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm_01}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\input{listofnotations.tex}
+
+% === Date and time ===
+\usepackage[yyyymmdd,hhmmss]{datetime}
+\usepackage{calc}
+\newcounter{chineseyear}
+\setcounter{chineseyear}{{\number\year-1911}}
+%\newdate{ThesisDate}{15}{2}{2014}
+
+
+% === Page style ===
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+%\pagestyle{empty}
+%\rfoot{Last modified: \today\ at \currenttime}
+%\cfoot{}
+%\lfoot{\thepage}
+\cfoot{\thepage}
+%\renewcommand{\sectionmark}[1]{ \markright{#1}{} }
+%\fancyhead[LE,RO]{\thepage}
+
+% === Footnote ===
+%\renewcommand{\thefootnote}{\arabic{footnote}}	% Arabic numerals, e.g., 1, 2, 3...
+%\renewcommand{\thefootnote}{\roman{footnote}}	    % Roman numerals (lowercase), e.g., i, ii, iii...
+%\renewcommand{\thefootnote}{\Roman{footnote}}	    % Roman numerals (uppercase), e.g., I, II, III...
+\renewcommand{\thefootnote}{\alph{footnote}}	    % Alphabetic (lowercase), e.g., a, b, c...
+%\renewcommand{\thefootnote}{\Alph{footnote}}	    % Alphabetic (uppercase), e.g., A, B, C...
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}	% A sequence of nine symbols, try it and see!
+\usepackage{perpage} %the perpage package
+\MakePerPage{footnote} %the perpage package command
+
+
+% === Special command ===
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+% === dimencial column ===
+\usepackage{dcolumn}
+\newcolumntype{d}[1]{ D{.}{\cdot}{#1}  }  
+
+% === force table position ===
+%\usepackage{float}
+%\restylefloat{table}
+% === Hyperref ===
+%\usepackage{hyperref}
+%\hypersetup{
+%    colorlinks  = true,
+%    linkcolor   = red,
+%    linktocpage = true,
+%    citecolor   = green,
+%}
+
+% === Clever ref ===
+\usepackage{cleveref}
+
+% === for tables ===
+\usepackage{booktabs}
+\usepackage{ctable}
+\usepackage{longtable}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+
+% === more space between table rows
+
+% === float barrier ===
+%\usepackage[section]{placeins}
+\usepackage[section,subsection,subsubsection]{extraplaceins}
+
+% === for graphics ===
+\usepackage{float}
+\usepackage{graphicx}
+%\usepackage{caption}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+
+% === change the counter ===
+\usepackage{chngcntr}
+
+% === Algorithm ===
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\renewcommand{\thealgorithm}{\arabic{section}.\arabic{algorithm}}
+
+% === Watermark (method 1) ===
+% need to add \AddToShipoutPicture{\WatermarkPicture} in main file
+%\usepackage{eso-pic}
+%\newcommand{\WatermarkPicture}{%
+%   \put(0,0){%
+%   \parbox[b][\paperheight]{\paperwidth}{%
+%     \vfill
+%     \centering
+%     \includegraphics[width=0.7 \textwidth]{./fig/watermark}%
+%     \vfill
+%     }
+%   }
+%}
+%\AddToShipoutPicture{\WatermarkPicture}
+
+% === Watermark or draft (method 2) ===
+%\usepackage{draftwatermark}
+%\SetWatermarkScale{10}
+%\SetWatermarkText{}
+%\SetWatermarkAngle{0}
+%\SetWatermarkText{\includegraphics{./fig/watermark}}
+
+% === Watermark (method 3) ===
+\usepackage{wallpaper}
+\CenterWallPaper{0.174}{./fig/watermark.pdf}
+\setlength{\wpXoffset}{6.1725cm}
+\setlength{\wpYoffset}{10.5225cm}
+
+% === Show labels ===
+%\usepackage{showkeys}
+%\usepackage[]{showlabels}
+%\showlabels{cite}
+
+% === Chinese package ===
+\usepackage{CJKutf8}
+
+% === Abstract environment
+\newenvironment{keyword}[1][Keyword]{ {\textbf{#1.}} }{  }
+\newenvironment{keywordCH}[1][關鍵字]{ {\textbf{#1： }} }{  }
+
+% === Nomenclature ===
+\usepackage[noprefix]{nomencl}
+\makenomenclature
+\renewcommand{\nomname}{}
+
+% === Include pdf page ===
+\usepackage[final]{pdfpages}
+
+
+
+
+
+
+

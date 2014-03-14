@@ -1,0 +1,509 @@
+\newcommand{\tableDataSplineLow}{
+
+        % splinelv_2
+        %%%%% the interpolation data %%%%%
+        \ctable[
+          caption = Interpolation data point of example 2,
+          label = tab:data_ex2,
+          width = 90mm,
+          pos = !h,
+          center
+        ]{ c d{1} d{1} d{1} d{1} }{
+        
+        }{ \FL
+         Level        & \multicolumn{2}{c}{$1$}  &  \multicolumn{2}{c}{$2$} \NN
+                 \cmidrule(lr){2-3}  \cmidrule(lr){4-5}
+                      &    $x$   & $y$   &  $x$ & $y$ \ML
+         \multirow{9}{*}{\specialcell{Interpolation \\ data}} 
+                          & -3   & 10  & -3   &   9 \NN
+                          & -2.4 & -24 & -2.5 &  16 \NN
+                          & -2   & 5   & -2   & -10 \NN
+                          & -1   & 0   & -1   &   1 \NN
+                          & -0   & 3   &  0   &   5 \NN
+                          & 1    & -5  &  1   & -15 \NN
+                          & 1.5  & -10 &  1.5 &  10 \NN
+                          & 2    & -1  &  2   &  -5 \NN
+                          & 3    & 5   &  3   &   7
+         \LL
+        }
+        
+}
+
+\newcommand{\tableDataSplineHigh}{{
+
+        % splinelvN_3
+        %%%%%% the interpolation data %%%%%
+        \ctable[
+          caption = Interpolation data point of example 3,
+          label = tab:data_ex3,
+          width = 150mm,
+          pos = !h,
+          center
+        ]{ >{\raggedleft}X d{1} d{1} d{1} d{1} d{1} d{1} d{1} d{1} d{1} d{1} }{
+        
+        }{ \FL
+         Level        & \multicolumn{2}{c}{$1$}  &  \multicolumn{2}{c}{$2$} &  \multicolumn{2}{c}{$4$} &  \multicolumn{2}{c}{$4$} &  \multicolumn{2}{c}{$5$}\NN
+                 \cmidrule(lr){2-3}  \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} \cmidrule(lr){10-11}
+                      & $x$  & $y$ &  $x$ & $y$  &  $x$ & $y$  &  $x$ & $y$  &  $x$ & $y$ \ML
+         \multirow{9}{*}{\rotatebox[origin=c]{90}{Interpolation data}}
+                      & -3   & 25  & -3   &  0   & -3   &  19  &  -3   &   -4   &  -3  &   25  \NN
+                      & -2.4 & -9  & -2.5 &  7   & -2.6 &  20  & -2.3  &   -33   & -2.3 &  19   \NN
+                      & -2   & 20  & -2   & -19  & -2   &  0  &    -2  &   -13  & -2    &  10   \NN
+                      & -1   & 15  & -1   &  -8  & -1   &  13  &  -1   &   -12  & -1    &  15   \NN
+                      & -0   & 18  &  0   &  -4  &  0   &  17  &  0    &   -9  &   0   &   24  \NN
+                      & 1    & 10  &  1   & -24  &  1   &  0  &   1    &   -8  &   1   &   20  \NN
+                      & 1.5  & 5   &  1.5 &  1   &  1.4 &  -6  &  1.5  &   -13  &  1.5 &   25  \NN
+                      & 2    & 14  &  2   & -14  &  2   &  5  &   2    &   -24  &  2    &  -1   \NN
+                      & 3    & 20  &  3   &  -2  &  3   &  17  &  3    &   -4  &   3   &   30  
+         \LL
+        }
+        
+}}
+
+\newcommand{\tableScenGabor}{{
+
+        %%%%%% table of the parameters %%%%%
+        \ctable[
+          caption = Scenarios of parameters in example 4,
+          label = tab:scen_ex4,
+          width = 150mm,
+          pos = !h,
+          center
+        ]{ >{\centering}p{15mm}>{\centering}p{15mm}>{\centering}p{15mm}>{\centering}p{15mm}
+        >{\centering}p{15mm}>{\centering}p{15mm}>{\raggedright}X }{
+
+        }{ \FL
+             Level & $\lambda$ & $\vartheta$ & $\psi$ & $\sigma$ & $\gamma$ & real/imaginary \ML
+             1     &     1.0   & $\pi/4$     &   2    &    0.5   &     2.0  &   real         \NN
+             2     &     1.2   & $\pi/4$     &   3    &    0.5   &     1.8  &   real         \NN
+             3     &     0.8   & $\pi/4$     &   4    &    0.5   &     2.2  &   imaginary         
+         \LL
+        }
+        
+}}
+
+\newcommand{\tableAmgInput}{{
+
+        %%%%%% table of input factors %%%%%     
+        \ctable[
+          caption = Input factors in example 5,
+          label = tab:AmgInputs,
+%          width = 140mm,
+          pos = !h,
+          center
+        ]{ c c l l }{
+           \tnote[a]{Grid data: 0.02:0.005:0.08, 0.09, 0.11}
+           \tnote[b]{Grid data: 0.6:0.2:1.8}
+           \tnote[c]{SGS is Symmetric Gauss-Seidel, GS is Gauss-Seidel}
+        }{ \FL
+            \multicolumn{2}{c}{Factors}         & Range/levels               & Description      \ML
+            \multirow{2}{*}{$\domQN$} & $x_{1}$ & $0.02 \sim 0.11$ \tmark[a] & Threshold for strong coupling  \cite{vanek_amg1996}\NN
+                                      & $x_{2}$ & $0.6  \sim 1.8$  \tmark[b] & Relaxation parameter of smoother \cite{briggs_amgTot2000} \NN
+            \cmidrule(r){1-2}
+            \multirow{2}{*}{$\domQL$} & $z_{1}$ & SGS, GS          \tmark[c] & Smoother  \cite{briggs_amgTot2000}    \NN
+                                      & $z_{2}$ & V, F, W                    & AMG Cycle \cite{briggs_amgTot2000}
+           \LL
+        }
+        
+}}
+
+\newcommand{\tableOptimaInfoI}{{
+
+    %%%%% table of optima information %%%%%
+    \ctable[
+          caption = Optima information of example 1 to 4,
+          label = tab:optima_info_1,
+          width = 140mm,
+          pos = !htbp,
+          center
+        ]{ >{\raggedleft}l>{\centering}X >{\centering}X >{\centering}X }{
+
+        }{ \FL
+            Example & Level on $\domQL$ & Optimal position on $\domQN$ & Optimal value  \ML
+            \multirow{2}{*}{$1$. poly4\_lv2}
+                    & ${\bf 1}$   & ${\bf -2}$          & ${\bf -32}$  \NN
+                    & $2$   & $+2$          & $-30$  \NN
+            \cmidrule(lr){1-4}
+            \multirow{2}{*}{$2$. spline\_lv2}
+                    & ${\bf 1}$   & ${\bf -2.6100}$          & ${\bf -31.2163}$  \NN
+                    & $2$   & $+2.5380$          & $-27.5889$  \NN
+            \cmidrule(lr){1-4}
+            \multirow{5}{*}{$3$. spline\_lv5}
+                    & $1$   & $-2.6100$ & $-16.2163$ \NN
+                    & $2$   & $+2.5380$ & $-36.5889$ \NN
+                    & $3$   & $+1.4220$ & $-6.0248$  \NN
+                    & ${\bf 4}$   & ${\bf -2.5920}$ & ${\bf -44.5904}$ \NN
+                    & $5$   & $+2.4600$ & $-19.7454$ \NN
+            \cmidrule(lr){1-4}
+            \multirow{3}{*}{$4$. gabor\_lv3}
+                    & $1$   & $(-0.4839,\ -0.4839)$ & $-0.6975$ \NN
+                    & $2$   & $(+0.6774,\ +0.8710)$ & $-0.6070$ \NN
+                    & ${\bf 3}$   & ${\bf (-0.2903,\ -0.2903)}$ & ${\bf -0.7983}$
+            \LL
+        }
+        
+}}
+
+\newcommand{\tableOptimaInfoII}{{
+
+    %%%%% table of optima information %%%%%
+    \ctable[
+          caption = Optima information of example 5,
+          label = tab:optima_info_2,
+          width = 150mm,
+          pos = !htbp,
+          center
+        ]{ >{\raggedleft}l>{\centering}X >{\centering}X >{\centering}X }{
+
+        }{ \FL
+            Example & Level on $\domQL$ & Optimal position on $\domQN$ & Optimal value  \ML
+            \multirow{6}{*}{$(a)$ amg\_ani\_cg}
+                    & {\bf (SCS, V)}  & ${\bf (+0.080,\ +1.000)}$ & ${\bf 41.0621}$ \NN
+                    & (SCS, F)  & $(+0.075,\ +1.000)$ & $47.8617$ \NN
+                    & (SCS, W)  & $(+0.065,\ +1.000)$ & $46.8054$ \NN
+                    & (CS, V)   & $(+0.065,\ +1.200)$ & $46.8054$ \NN
+                    & (CS, F)   & $(+0.065,\ +1.000)$ & $56.0627$ \NN
+                    & (CS, W)   & $(+0.065,\ +1.000)$ & $60.4995$ \NN
+            \cmidrule(lr){1-4}
+            \multirow{6}{*}{$(b)$ amg\_ani\_bicgstab}
+                    & (SCS, V)  & $(+0.020,\ +1.000)$ & $39.2452$ \NN
+                    & (SCS, F)  & $(+0.025,\ +1.000)$ & $37.2262$ \NN
+                    & {\bf (SCS, W)}  & ${\bf (+0.025,\ +1.200)}$ & ${\bf 37.1637}$ \NN
+                    & (CS, V)   & $(+0.025,\ +1.000)$ & $48.6536$ \NN
+                    & (CS, F)   & $(+0.020,\ +1.200)$ & $55.7955$ \NN
+                    & (CS, W)   & $(+0.025,\ +1.000)$ & $60.4022$ \NN
+            \cmidrule(lr){1-4}
+            \multirow{6}{*}{$(c)$ amg\_iso\_cg}
+                    & (SCS, V)  & $(+0.020,\ +1.600)$ & $12.7567$ \NN
+                    & (SCS, F)  & $(+0.020,\ +1.000)$ & $8.6885$ \NN
+                    & (SCS, W)  & $(+0.020,\ +1.400)$ & $8.6837$ \NN
+                    & (CS, V)   & $(+0.020,\ +1.400)$ & $12.8284$ \NN
+                    & (CS, F)   & $(+0.025,\ +1.200)$ & $7.8150$ \NN
+                    & {\bf (CS, W)}   & ${\bf (+0.020,\ +1.000)}$ & ${\bf 7.7687}$ \NN
+            \cmidrule(lr){1-4}
+            \multirow{6}{*}{$(d)$ amg\_iso\_bicgstab}
+                    & (SCS, V)  & $(+0.030,\ +1.200)$ & $8.1682$ \NN
+                    & (SCS, F)  & $(+0.030,\ +1.000)$ & $5.9862$ \NN
+                    & (SCS, W)  & $(+0.030,\ +1.000)$ & $5.9722$ \NN
+                    & (CS, V)   & $(+0.025,\ +1.400)$ & $8.0069$ \NN
+                    & (CS, F)   & $(+0.030,\ +1.200)$ & $6.2120$ \NN
+                    & {\bf (CS, W)}   & ${\bf (+0.020,\ +1.000)}$ & ${\bf 5.6323}$ 
+            \LL
+        }
+        
+}}
+
+\newcommand{\tableOptimaInfoIII}{{
+
+    %%%%% table of optima information %%%%%
+    \ctable[
+          caption = Optima information of example 6,
+          label = tab:optima_info_3,
+          width = 150mm,
+          pos = !htbp,
+          center
+        ]{ >{\raggedleft}l>{\centering}X >{\centering}X >{\centering}X }{
+
+        }{ \FL
+            Example & Level on $\domQL$ & Optimal position on $\domQN$ & Optimal value  \ML
+            \multirow{6}{*}{$(a)$ sim\_ani\_cg}
+                    & {\bf (SCS, V)}  & ${\bf (+0.0855,\ +1.0364)}$ & ${\bf 47.2162}$ \NN
+                    & (SCS, F)  & $(+0.0855,\ +1.0364)$ & $48.8111$ \NN
+                    & (SCS, W)  & $(+0.0855,\ +1.0364)$ & $47.8545$ \NN
+                    & (CS, V)   & $(+0.0855,\ +1.0364)$ & $63.9469$ \NN
+                    & (CS, F)   & $(+0.0855,\ +1.0364)$ & $63.2537$ \NN
+                    & (CS, W)   & $(+0.0855,\ +1.0364)$ & $62.0149$ \NN
+            \cmidrule(lr){1-4}
+            \multirow{6}{*}{$(b)$ sim\_ani\_bicgstab}
+                    & (SCS, V)  & $(+0.0282,\ +0.9273)$ & $46.0749$ \NN
+                    & {\bf (SCS, F)}  & ${\bf (+0.0282,\ +1.0364)}$ & ${\bf 44.0880}$ \NN
+                    & (SCS, W)  & $(+0.0936,\ +0.9273)$ & $47.4482$ \NN
+                    & (CS, V)   & $(+0.0282,\ +1.0364)$ & $57.8555$ \NN
+                    & (CS, F)   & $(+0.0773,\ +1.0364)$ & $64.9877$ \NN
+                    & (CS, W)   & $(+0.0773,\ +1.0364)$ & $63.8270$ \NN
+            \cmidrule(lr){1-4}
+            \multirow{6}{*}{$(c)$ sim\_iso\_cg}
+                    & (SCS, V)  & $(+0.0282,\ +1.2545)$ & $14.6691$ \NN
+                    & (SCS, F)  & $(+0.0282,\ +1.0364)$ & $10.5772$ \NN
+                    & {\bf (SCS, W)}  & ${\bf (+0.0282,\ +1.2545)}$ & ${\bf 10.0677}$ \NN
+                    & (CS, V)   & $(+0.0282,\ +1.0364)$ & $15.1160$ \NN
+                    & (CS, F)   & $(+0.0282,\ +1.1455)$ & $10.4876$ \NN
+                    & (CS, W)   & $(+0.0282,\ +1.1455)$ & $11.0857$ \NN
+            \cmidrule(lr){1-4}
+            \multirow{6}{*}{$(d)$ sim\_iso\_bicgstab}
+                    & (SCS, V)  & $(+0.0282,\ +1.2545)$ & $8.1908$ \NN
+                    & (SCS, F)  & $(+0.0282,\ +1.0364)$ & $6.0039$ \NN
+                    & {\bf (SCS, W)}  & ${\bf (+0.0282,\ +1.0364)}$ & ${\bf 5.9878}$ \NN
+                    & (CS, V)   & $(+0.0282,\ +1.2545)$ & $9.5131$ \NN
+                    & (CS, F)   & $(+0.0282,\ +1.2545)$ & $6.2278$ \NN
+                    & (CS, W)   & $(+0.0282,\ +1.0364)$ & $6.4599$ 
+            \LL
+        }
+        
+}}
+
+
+\newcommand{\tableExpSetting}{{
+
+      \ctable[
+          caption = Experiment settings,
+          label = tab:exp_setting,
+          width = 110mm,
+          pos = !htbp,
+          center
+      ]{ >{\raggedright}l>{\raggedright}X }{
+
+      }{ \FL
+         Settings  &  \multicolumn{1}{c}{Description}  \ML
+         $n_{0}$   &  number of initial design on each sub-domain ${\bf \Omega}_{k}$ \NN
+         $n$       &  number of initial design on ${\bf \Omega}$, with $n = n_{0} \cdot m$, 
+                      where $m$ is the number of cases \NN
+         $\maxit$  &  maximum iteration of the tuning procedure \NN
+         $\nRep$&  number of repetitions of different initial design \NN
+         $\nMesh$  &  number of mesh grids on each dimension of $\domQN$
+         \LL
+      }
+      
+}}
+
+\newcommand{\tableExpSettingExample}{{
+
+      %%%%%% a table of the settings %%%%%
+      \ctable[
+          caption = Experiment settings for examples,
+          label = tab:exp_setting_example,
+          %width = 140mm,
+          pos = !htbp,
+          center
+      ]{ >{\raggedright}l r r r r c >{\raggedright}X >{\raggedright}X}{
+         \tnote   {order 0 polynomial regressor (constant)}
+         \tnote[b]{order 1 polynomial regressor}
+      }{ \FL
+         Example             & $n_{0}$  &  $n$   & $\maxit$ & $\nRep$ & $\nMesh$ & Regression functions       \ML
+         $1$. {poly4\_lv2}   &   3      &  6     &  30      &  100    & 174      & $f_{1} = 1$\tmark          \NN
+         $2$. {spline\_lv2}  &   3      &  6     &  30      &  100    & 174      & $f_{1} = 1$\tmark          \NN
+         $3$. {spline\_lv5}  &   3      &  15    &  30      &  100    & 174      & $f_{1} = 1$\tmark          \NN
+         $4$. {gabor\_lv3}   &   6      &  18    &  90      &  100    &  32      & $f_{1} = 1$\tmark          \NN
+         $5$. all            &   6      &  36    &  90      &  100    &  12      & $f_{1} = 1,\
+                                                                                    f_{2} = x_{1},\ 
+                                                                                    f_{3} = x_{2}$\tmark[b]   \NN
+         $6$. all            &   6      &  36    &  90      &  100    &  12      & $f_{1} = 1,\ 
+                                                                                    f_{2} = x_{1},\ 
+                                                                                    f_{3} = x_{2}$\tmark[b]
+         \LL
+      }
+      
+}}
+
+\newcommand{\tableExpMeas}{{
+
+      \ctable[
+          caption = Experiment measurements,
+          label = tab:exp_meas,
+          width = 110mm,
+          pos = !htbp,
+          center
+      ]{ >{\raggedright}c>{\raggedright}X }{
+
+      }{ \FL
+         \multicolumn{1}{l}{Measurements}   &  \multicolumn{1}{c}{Description}  \ML
+         \multicolumn{1}{l}{Robustness}     &                                   \NN
+         \cmidrule(lr){1-1}                                              
+         $f_{hit}$      & hit frequency defined in (\ref{eq:def_fhit})  \NN
+         $\absErr$            & absolute error defined in (\ref{eq:abs_error}) \NN
+         $\relErr$      & relative error defined in (\ref{eq:rel_error}) \NN
+         $\rho$         & robustness index defined in (\ref{eq:def_robIdx}) \NN
+         \multicolumn{1}{l}{Modelling cost} &                                    \NN
+         \cmidrule(lr){1-1}
+         $T_{cost}$     & the total modelling time of the whole procedure ($N$ repetitions)
+         \LL
+      }
+      
+}}
+
+\newcommand{\tableResultRobustnessI}{{
+
+      \ctable[
+          caption = Results of robustness of example 1 to 4,
+          label = tab:result_robustness_1,
+          %width = 160mm,
+          pos = !h,
+          center
+      ]{@{}clrrrr@{}}{
+      
+      }{ \FL
+       \multirow{2}{*}{Example} & \multirow{2}{*}{Meas.}  &\multicolumn{2}{c}{IGP} & \multicolumn{2}{c}{QQGP} \NN
+       \cmidrule(lr){3-4} \cmidrule(lr){5-6}
+       &                      & \multicolumn{1}{c}{MP} & \multicolumn{1}{c}{MSEI} & \multicolumn{1}{c}{MP} & \multicolumn{1}{c}{MSEI}       \ML
+       \multirow{5}{*}{ \specialcell{1\\ {poly4\_lv2} } }
+       & $f_{hit}\ (\%)$      & 63         & 100         & 100        & 100        \NN
+       & mean($\absErr$)      & 7.4105E-01 & 1.0516E-03  & 1.0516E-03 & 1.0516E-03 \NN
+       & mean($\relErr$)      & 2.3158E-02 & 3.2862E-05  & 3.2862E-05 & 3.2862E-05 \NN
+       & mean($\rho$)         & 0.9768     & 1.0000      & 1.0000     & 1.0000     \NN
+       & s.t.d.($\rho$)       & 0.0303     & 0.0000      & 0.0000     & 0.0000     \NN
+       %& $T_{cost}$ (sec.)    & 98.11      & 101.29      & 167.21     & 170.21     \NN
+       \cmidrule(lr){1-6}
+       \multirow{5}{*}{ \specialcell{2\\ {spline\_lv2} } }
+       & $f_{hit}\ (\%)$      & 48         & 100         & 58         & 100        \NN
+       & mean($\absErr$)      & 1.9017E+00 & 2.1301E-02  & 1.5399E+00 & 2.0317E-02 \NN
+       & mean($\relErr$)      & 6.0920E-02 & 6.8236E-04  & 4.9330E-02 & 6.5085E-04 \NN
+       & mean($\rho$)         & 0.9391     & 0.9993      & 0.9507     & 0.9993     \NN
+       & s.t.d.($\rho$)       & 0.0582     & 0.0003      & 0.0575     & 0.0000     \NN
+       \cmidrule(lr){1-6}
+       \multirow{5}{*}{ \specialcell{3\\ {spline\_lv5} } }
+       & $f_{hit}\ (\%)$      & 73         & 87          & 76         & 95         \NN
+       & mean($\absErr$)      & 2.1713E+00 & 1.1144E+00  & 1.9312E+00 & 4.1109E-01 \NN
+       & mean($\relErr$)      & 4.8694E-02 & 2.4991E-02  & 4.3310E-02 & 9.2194E-03 \NN
+       & mean($\rho$)         & 0.9513     & 0.9750      & 0.9567     & 0.9908     \NN
+       & s.t.d.($\rho$)       & 0.0801     & 0.0612      & 0.0770     & 0.0393     \NN
+       \cmidrule(lr){1-6}
+       \multirow{5}{*}{ \specialcell{4\\ {gabor\_lv3} } }
+       & $f_{hit}\ (\%)$      & 16         & 18          & 33         & 96         \NN
+       & mean($\absErr$)      & 1.3268E-01 & 1.3843E-01  & 1.0755E-01 & 1.2783E-02 \NN
+       & mean($\relErr$)      & 1.6619E-01 & 1.7340E-01  & 1.3472E-01 & 1.6012E-02 \NN
+       & mean($\rho$)         & 0.8338     & 0.8266      & 0.8653     & 0.9840     \NN
+       & s.t.d.($\rho$)       & 0.0886     & 0.1206      & 0.1070     & 0.1052     
+       \LL
+      }
+      
+}}
+
+\newcommand{\tableResultRobustnessII}{{
+
+      \ctable[
+          caption = Results of robustness of example 5,
+          label = tab:result_robustness_2,
+          %width = 160mm,
+          pos = !h,
+          center
+      ]{@{}clrrrr@{}}{
+      
+      }{ \FL
+       \multirow{2}{*}{Example} & \multirow{2}{*}{Meas.}  &\multicolumn{2}{c}{IGP} & \multicolumn{2}{c}{QQGP} \NN
+       \cmidrule(lr){3-4} \cmidrule(lr){5-6}
+       &                      & \multicolumn{1}{c}{MP} & \multicolumn{1}{c}{MSEI} & \multicolumn{1}{c}{MP} & \multicolumn{1}{c}{MSEI}       \ML
+       \multirow{5}{*}{ \specialcell{(a)\\ {amg\_ani\_cg} } }
+       & $f_{hit}\ (\%)$      & 85    & 60    & 97    & 87 \NN
+       & mean($\absErr$)      & 8.7206E-01 & 3.1871E+00 & 4.1860E-01 & 1.6371E+00 \NN
+       & mean($\relErr$)      & 2.1238E-02 & 7.7617E-02 & 1.0194E-02 & 3.9869E-02 \NN
+       & mean($\rho$)         & 1.0212  & 1.0776  & 1.0102  & 1.0399  \NN
+       & s.t.d.($\rho$)       & 0.0509  & 0.0854  & 0.0320  & 0.0700  \NN
+       \cmidrule(lr){1-6}
+       \multirow{5}{*}{ \specialcell{(b)\\ {amg\_ani\_bicgstab} } }
+       & $f_{hit}\ (\%)$      & 27    & 28    & 13    & 14 \\
+       & mean($\absErr$)      & 1.2379E+00 & 8.4029E-01 & 1.6712E+00 & 1.8459E+00 \\
+       & mean($\relErr$)      & 3.3310E-02 & 2.2610E-02 & 4.4969E-02 & 4.9670E-02 \\
+       & mean($\rho$)         & 1.0333  & 1.0226  & 1.0450  & 1.0497  \\
+       & s.t.d.($\rho$)       & 0.0274  & 0.0310  & 0.0222  & 0.0385  \\
+       \cmidrule(lr){1-6}
+       \multirow{5}{*}{ \specialcell{(c)\\ {amg\_iso\_cg} } }
+       & $f_{hit}\ (\%)$      & 58    & 73    & 75    & 76 \NN
+    & mean($\absErr$)      & 1.2598E-01 & 1.6797E-02 & 5.8536E-02 & 6.6761E-02 \NN
+    & mean($\relErr$)      & 1.6217E-02 & 2.1621E-03 & 7.5348E-03 & 8.5935E-03 \NN
+    & mean($\rho$)         & 1.0162  & 1.0022  & 1.0075  & 1.0086  \NN
+    & s.t.d.($\rho$)       & 0.0378  & 0.0036  & 0.0257  & 0.0279 \NN
+       \cmidrule(lr){1-6}
+       \multirow{5}{*}{ \specialcell{(d)\\ {amg\_iso\_bicgstab} } }
+       & $f_{hit}\ (\%)$      & 60    & 75    & 78    & 75 \NN
+    & mean($\absErr$)      & 1.4279E-01 & 9.1672E-02 & 8.1012E-02 & 9.1987E-02 \NN
+    & mean($\relErr$)      & 2.5353E-02 & 1.6276E-02 & 1.4383E-02 & 1.6332E-02 \NN
+    & mean($\rho$)         & 1.0254  & 1.0163  & 1.0144  & 1.0163 \NN
+    & s.t.d.($\rho$)       & 0.0313  & 0.0284  & 0.0272  & 0.0284 
+       \LL
+      }
+      
+}}
+
+
+\newcommand{\tableResultRobustnessIII}{{
+
+      \ctable[
+          caption = Results of robustness of example 6,
+          label = tab:result_robustness_3,
+          %width = 160mm,
+          pos = !h,
+          center
+      ]{@{}clrrrr@{}}{
+      
+      }{ \FL
+       \multirow{2}{*}{Example} & \multirow{2}{*}{Meas.}  &\multicolumn{2}{c}{IGP} & \multicolumn{2}{c}{QQGP} \NN
+       \cmidrule(lr){3-4} \cmidrule(lr){5-6}
+       &                      & \multicolumn{1}{c}{MP} & \multicolumn{1}{c}{MSEI} & \multicolumn{1}{c}{MP} & \multicolumn{1}{c}{MSEI}       \ML
+       \multirow{5}{*}{ \specialcell{(a)\\ {sim\_ani\_cg} } }
+       & $f_{hit}\ (\%)$      & 90    & 86    & 98    & 98 \NN
+    & mean($\absErr$)      & 6.3830E-02 & 1.3388E-01 & 2.5281E-02 & 5.0310E-02 \NN
+    & mean($\relErr$)      & 1.3519E-03 & 2.8355E-03 & 5.3542E-04 & 1.0655E-03 \NN
+    & mean($\rho$)         & 1.0014  & 1.0028  & 1.0005  & 1.0011  \NN
+    & s.t.d.($\rho$)       & 0.0041  & 0.0076  & 0.0026  & 0.0036  \NN
+       \cmidrule(lr){1-6}
+       \multirow{5}{*}{ \specialcell{(b)\\ {sim\_ani\_bicgstab} } }
+       & $f_{hit}\ (\%)$      & 36    & 67    & 93    & 99 \NN
+    & mean($\absErr$)      & 1.8210E+00 & 7.6556E-01 & 1.3909E-01 & 1.9869E-02 \NN
+    & mean($\relErr$)      & 4.1303E-02 & 1.7364E-02 & 3.1547E-03 & 4.5068E-04 \NN
+    & mean($\rho$)         & 1.0413  & 1.0174  & 1.0032  & 1.0005  \NN
+    & s.t.d.($\rho$)       & 0.0334  & 0.0260  & 0.0116  & 0.0045  \NN
+       \cmidrule(lr){1-6}
+       \multirow{5}{*}{ \specialcell{(c)\\ {sim\_iso\_cg} } }
+       & $f_{hit}\ (\%)$      & 78    & 89    & 91    & 94 \NN
+    & mean($\absErr$)      & 1.2052E-01 & 7.1525E-02 & 7.7584E-02 & 6.0900E-02 \NN
+    & mean($\relErr$)      & 1.1971E-02 & 7.1044E-03 & 7.7063E-03 & 6.0491E-03 \NN
+    & mean($\rho$)         & 1.0120  & 1.0071  & 1.0077  & 1.0060  \NN
+    & s.t.d.($\rho$)       & 0.0225  & 0.0176  & 0.0171  & 0.0141  \NN
+       \cmidrule(lr){1-6}
+       \multirow{5}{*}{ \specialcell{(d)\\ {sim\_iso\_bicgstab} } }
+        & $f_{hit}\ (\%)$      & 53    & 66    & 59    & 60 \NN
+    & mean($\absErr$)      & 1.6951E-02 & 8.1565E-03 & 7.9422E-03 & 1.1943E-02 \NN
+    & mean($\relErr$)      & 2.8310E-03 & 1.3622E-03 & 1.3264E-03 & 1.9946E-03 \NN
+    & mean($\rho$)         & 1.0028  & 1.0014  & 1.0013  & 1.0020  \NN
+    & s.t.d.($\rho$)       & 0.0095  & 0.0042  & 0.0017  & 0.0079  
+       \LL
+      }
+      
+}}
+
+
+\newcommand{\tableModelCost}{{
+
+      \ctable[
+          caption = Modelling cost in time (seconds),
+          label = tab:model_cost,
+          %width = 100mm,
+          pos = !h,
+          center
+      ]{ l r r r r }{
+      
+      }{ \FL
+       \multirow{2}{*}{Example} 
+       &\multicolumn{2}{c}{IGP} & \multicolumn{2}{c}{QQGP} \NN
+       \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+       & \multicolumn{1}{c}{MP} & \multicolumn{1}{c}{MSEI} & \multicolumn{1}{c}{MP} & \multicolumn{1}{c}{MSEI} \ML
+       {poly4\_lv2}
+       & 98.11      & 101.29    & 167.21     & 170.21   \NN
+       {spline\_lv2}
+       & 88.19      & 88.34     & 137.78     & 137.47   \NN
+       {spline\_lv5}
+       & 201.95     & 205.07    & 747.56     & 751.22   \NN
+       {gabor\_lv3}
+       & 195.49     & 248.38    & 1252.90    & 4039.98  \NN
+       \cmidrule(lr){1-1}
+       {amg\_ani\_cg}
+       & 100.26     & 104.09    & 1125.21    & 1148.83  \NN
+       {amg\_ani\_bicgstab}
+       & 101.91     & 105.37    & 1142.38    & 1176.22  \NN
+       {amg\_iso\_cg}
+       & 97.79      & 103.57    & 1162.95    & 1162.90  \NN
+       {amg\_iso\_bicgstab}
+       & 97.75      & 103.86    & 1162.02    & 1169.26  \NN
+       \cmidrule(lr){1-1}
+       {sim\_ani\_cg}
+       & 102.18     & 105.62    & 1111.87    & 1132.41  \NN
+       {sim\_ani\_bicgstab}
+       & 101.57     & 106.87    & 1151.94    & 1144.32  \NN
+       {sim\_iso\_cg}
+       & 97.58      & 103.78    & 1150.93    & 1158.56  \NN
+       {sim\_iso\_bicgstab}
+       & 97.18      & 102.91    & 1152.09    & 1153.83 
+       \LL
+      }
+      
+}}
